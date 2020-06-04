@@ -22,4 +22,4 @@ pnpm-debug.log*
 *.sw?
 
 package-lock.json
-yarn.json
+yarn.lock
