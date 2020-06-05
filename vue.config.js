@@ -126,11 +126,11 @@ module.exports = {
             resolve: {
                 extensions: [".js", ".vue", ".json"], //文件优先解析后缀名顺序
                 alias: {
-                    "@": path.resolve(__dirname, "./src"),
-                    "@components": path.resolve(__dirname, "./src/components"),
-                    "@views": path.resolve(__dirname, "./src/views"),
-                    "@utils": path.resolve(__dirname, "./src/utils"),
-                    "@service": path.resolve(__dirname, "./src/service")
+                    "@": path.resolve(__dirname, "src"),
+                    "@components": path.resolve(__dirname, "src/components"),
+                    "@views": path.resolve(__dirname, "src/views"),
+                    "@utils": path.resolve(__dirname, "src/utils"),
+                    "@service": path.resolve(__dirname, "src/service")
                 }, // 别名配置
                 plugins: []
             }

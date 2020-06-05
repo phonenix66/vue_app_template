@@ -4,4 +4,6 @@ module.exports = {
     baseApi: 'https://test.xxx.com/api',
     APPID: 'xxx',
     APPSECRET: 'xxx'
-}
+};
+
+
