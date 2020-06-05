@@ -1,4 +1,4 @@
-const path = require("path");
+const path = require('path');
 const defaultSettings = require('./src/config/index');
 const name = defaultSettings.title;
 const IS_PROD = ['production', 'prod'].includes(process.env.NODE_ENV);
@@ -8,7 +8,7 @@ module.exports = {
     outputDir: 'dist',
     assetsDir: 'static',
     // lintOnSave：{ type:Boolean default:true } 问你是否使用eslint
-    lintOnSave: true,
+    lintOnSave: !IS_PROD,
     // productionSourceMap：{ type:Bollean,default:true } 生产源映射
     // 如果您不需要生产时的源映射，那么将此设置为false可以加速生产构建
     productionSourceMap: false,
@@ -16,11 +16,11 @@ module.exports = {
         port: 9020, // 端口号
         host: 'localhost',
         https: false, // https:{type:Boolean}
-        open: true, //配置自动启动浏览器
+        open: true, // 配置自动启动浏览器
         overlay: {
             warnings: false,
             errors: true
-        },
+        }
         // proxy: 'http://localhost:4000' // 配置跨域处理,只有一个代理
     },
     css: {
@@ -57,7 +57,7 @@ module.exports = {
             const optimization = {
                 runtimeChunk: 'single',
                 splitChunks: {
-                    chunks: "all",
+                    chunks: 'all',
                     maxInitialRequests: Infinity,
                     minSize: 20000, // 依赖包超过20000bit将被单独打包
                     cacheGroups: {
@@ -72,7 +72,7 @@ module.exports = {
                                     /[\\/]node_modules[\\/](.*?)([\\/]|$)/
                                 )[1];
                                 // npm package names are URL-safe, but some servers don't like @ symbols
-                                return `npm.${packageName.replace("@", "")}`;
+                                return `npm.${packageName.replace('@', '')}`;
                             }
                         },
                         commons: {
@@ -88,7 +88,7 @@ module.exports = {
                             test: /[\\/]node_modules[\\/]_?vant(.*)/
                         }
                     }
-                },
+                }
 
             };
             Object.assign(config, { optimization });
@@ -96,9 +96,9 @@ module.exports = {
             // 开发环境配置
             config.mode = 'development';
             const optimization2 = {
-                runtimeChunk: "single",
+                runtimeChunk: 'single',
                 splitChunks: {
-                    chunks: "all",
+                    chunks: 'all',
                     maxInitialRequests: Infinity,
                     minSize: 20000, // 依赖包超过20000bit将被单独打包
                     cacheGroups: {
@@ -111,7 +111,7 @@ module.exports = {
                                     /[\\/]node_modules[\\/](.*?)([\\/]|$)/
                                 )[1];
                                 // npm package names are URL-safe, but some servers don't like @ symbols
-                                return `npm.${packageName.replace("@", "")}`;
+                                return `npm.${packageName.replace('@', '')}`;
                             }
                         }
                     }
@@ -124,16 +124,16 @@ module.exports = {
 
         Object.assign(config, {
             resolve: {
-                extensions: [".js", ".vue", ".json"], //文件优先解析后缀名顺序
+                extensions: ['.js', '.vue', '.json'], // 文件优先解析后缀名顺序
                 alias: {
-                    "@": path.resolve(__dirname, "src"),
-                    "@components": path.resolve(__dirname, "src/components"),
-                    "@views": path.resolve(__dirname, "src/views"),
-                    "@utils": path.resolve(__dirname, "src/utils"),
-                    "@service": path.resolve(__dirname, "src/service")
+                    '@': path.resolve(__dirname, 'src'),
+                    '@components': path.resolve(__dirname, 'src/components'),
+                    '@views': path.resolve(__dirname, 'src/views'),
+                    '@utils': path.resolve(__dirname, 'src/utils'),
+                    '@service': path.resolve(__dirname, 'src/service')
                 }, // 别名配置
                 plugins: []
             }
         });
     }
-}
+};

@@ -1,6 +1,6 @@
-import api from './index'
+import api from './index';
 // axios
-import request from '@/utils/request'
+import request from '@/utils/request';
 
 // 登录
 export function login(data) {
@@ -8,7 +8,7 @@ export function login(data) {
         url: api.Login,
         method: 'post',
         data
-    })
+    });
 }
 
 // 用户信息 post 方法
@@ -18,7 +18,7 @@ export function getUserInfo(data) {
         method: 'post',
         data,
         hideloading: true
-    })
+    });
 }
 
 // 用户名称 get 方法
@@ -28,5 +28,5 @@ export function getUserName(params) {
         method: 'get',
         params,
         hideloading: true
-    })
+    });
 }

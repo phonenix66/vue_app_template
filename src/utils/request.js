@@ -25,7 +25,7 @@ service.interceptors.request.use(
         if (!config.hideloading) {
             Toast.loading({
                 forbidClick: true
-            })
+            });
         }
 
         return config;
@@ -52,6 +52,6 @@ service.interceptors.response.use(
         console.log('err' + error); // for debug
         return Promise.reject(error);
     }
-)
+);
 
 export default service;
