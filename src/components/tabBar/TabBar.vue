@@ -1,14 +1,17 @@
 <template>
     <div>
-        <van-tabbar v-model="active" @change="handleChange">
-            <van-tabbar-item
+		<van-tabbar
+			v-model="active"
+			@change="handleChange"
+		>
+			<van-tabbar-item
                 v-for="(item, index) in data"
                 :to="item.to"
-                :icon="item.icon"
-                :key="index"
-            >{{ item.title }}</van-tabbar-item>
-        </van-tabbar>
-    </div>
+				:icon="item.icon"
+				:key="index"
+			>{{ item.title }}</van-tabbar-item>
+		</van-tabbar>
+	</div>
 </template>
 
 <script>
